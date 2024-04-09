@@ -5,9 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.atilsamancioglu.yemektariflerikitabi.databinding.FragmentTarifBinding
 
 
 class TarifFragment : Fragment() {
+
+    private var _binding: FragmentTarifBinding? = null
+    private val binding get() = _binding!!
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +23,29 @@ class TarifFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tarif, container, false)
+        _binding = FragmentTarifBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.kaydetButton.setOnClickListener { kaydet(it) }
+        binding.silButton.setOnClickListener { sil(it) }
+    }
+
+    fun kaydet(view: View) {
+
+    }
+
+    fun sil(view: View) {
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 
