@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id ("kotlin-kapt")
     id ("androidx.navigation.safeargs.kotlin")
+    id ("com.google.devtools.ksp")
 
 }
 
@@ -62,8 +62,11 @@ dependencies {
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    kapt("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-rxjava3:$room_version")
+    annotationProcessor ("androidx.room:room-compiler:$room_version")
+    // To use Kotlin annotation processing tool (kapt)
+    ksp("androidx.room:room-compiler:$room_version")
+
+    implementation ("androidx.room:room-rxjava3:$room_version")
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.2")
 
 }

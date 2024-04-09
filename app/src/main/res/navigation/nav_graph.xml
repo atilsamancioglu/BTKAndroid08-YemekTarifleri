@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listeFragment"
-        android:name="com.atilsamancioglu.yemektariflerikitabi.ListeFragment"
+        android:name="com.atilsamancioglu.yemektariflerikitabi.view.ListeFragment"
         android:label="fragment_liste"
         tools:layout="@layout/fragment_liste" >
         <action
@@ -16,7 +16,18 @@
     </fragment>
     <fragment
         android:id="@+id/tarifFragment"
-        android:name="com.atilsamancioglu.yemektariflerikitabi.TarifFragment"
+        android:name="com.atilsamancioglu.yemektariflerikitabi.view.TarifFragment"
         android:label="fragment_tarif"
-        tools:layout="@layout/fragment_tarif" />
+        tools:layout="@layout/fragment_tarif" >
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_tarifFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+    </fragment>
 </navigation>
