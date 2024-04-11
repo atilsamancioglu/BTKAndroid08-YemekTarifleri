@@ -9,12 +9,13 @@
 
 
     <ImageView
-        android:onClick="gorselSec"
         android:id="@+id/imageView"
+
         android:layout_width="305dp"
         android:layout_height="215dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/ic_launcher_background"
+        android:onClick="gorselSec"
+        android:src="@drawable/gorsel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
