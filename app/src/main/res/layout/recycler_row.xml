@@ -2,6 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@xml/border"
+    android:layout_margin="3dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -11,7 +13,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textColor="#020B5F"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         >
 
     </TextView>
